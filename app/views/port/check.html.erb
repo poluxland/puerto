@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Chequeo de Puerto</title>
+  <style>
+    body { font-family: sans-serif; margin: 2rem; }
+    .ok { color: green; }
+    .fail { color: red; }
+    a { text-decoration: none; color: #007bff; }
+  </style>
+</head>
+<body>
+  <h1>Puerto <%= PortController::PORT %> en <%= PortController::HOST %></h1>
+  <% if @open %>
+    <p class="ok">✅ ¡Puerto abierto!</p>
+  <% else %>
+    <p class="fail">❌ No se pudo conectar.</p>
+  <% end %>
+  <p><a href="<%= root_path %>">↻ Reintentar</a></p>
+</body>
+</html>
